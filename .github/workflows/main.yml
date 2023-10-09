@@ -31,5 +31,5 @@ jobs:
           name: sum-binary
           path: ./sum
 
-      - name: Run C++ program
-        run: ./sum < input.txt # Provide your input file here
+      # - name: Run C++ program
+      #   run: ./sum < input.txt # Provide your input file here
