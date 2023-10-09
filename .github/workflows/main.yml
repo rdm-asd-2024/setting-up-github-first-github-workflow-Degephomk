@@ -1,0 +1,35 @@
+name: Build and Run
+
+on:
+  push:
+    branches:
+      - main # Change 'master' to 'main' if your default branch is 'main'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Build C++ program
+        run: g++ -o sum sum.cpp
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: sum-binary
+          path: ./sum
+
+  run:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Download build artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: sum-binary
+          path: ./sum
+
+      - name: Run C++ program
+        run: ./sum < input.txt # Provide your input file here
