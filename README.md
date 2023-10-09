@@ -1,3 +1,4 @@
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/A0diYlQ1)
 # Homework 1
 
 Write a simple C++ program that takes in input a sequence of positive integers, whose last number is `0`, and outputs their sum. Then, you should create a GitHub workflow composed of two jobs, `build` and `run` that perform the following:
